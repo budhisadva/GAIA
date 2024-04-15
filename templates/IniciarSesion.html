@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{% static 'public/IniciarSesion.css' %}">
+    <script defer type="module" src="{% static 'src/index.js' %}"></script>
+  </head>
+  <body>
+    <div class="logo">
+      <p class="logo__titulo">GAIA</p>
+      <div class="logo__imagen">
+        <img src="{% static 'images/logo.png' %}" alt="">
+      </div>
+    </div>
+    <form class="ingresar" action="" method="post">
+      <p class="ingresar__titulo">Ingresar</p>
+      <input class="ingresar__campo" type="email" name="correo" placeholder="Correo">
+      <input class="ingresar__campo" type="password" name="contrasena" placeholder="Contraseña...">
+      <input class="ingresar__btn" type="submit" value="Ingresar">
+      <a href="#">Aun no tengo cuenta</a>
+    </form>
+  </body>
+</html>
