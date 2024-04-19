@@ -1,1 +1,1 @@
-console.log('hola mundoooo');
+console.log(`Ancho: ${window.innerWidth}, Alto: ${window.innerHeight}`);

@@ -1,0 +1,38 @@
+{% extends 'layout/outter.html' %}
+{% load static %}
+
+{% block title %}Crear Cuenta{% endblock %}
+
+{% block content %}
+<form id="form-registrar">
+  <p class="form__titulo">Registrarse</p>
+  <div class="fila">
+    <input class="form__campo" type="text" name="nombre" placeholder="Nombre">
+    <input class="form__campo" type="date" name="fecha">
+  </div>
+  <div class="fila">
+    <input class="form__campo" type="email" name="correo" placeholder="Correo">
+    <input class="form__campo" type="email_c" name="correo" placeholder="Confirme correo">
+  </div>
+  <div class="fila">
+    <div class="rad-btn">
+      <input type="radio" name="genero" value="mujer" id="mujer">
+      <label for="mujer">Mujer</label>
+    </div>
+    <div class="rad-btn">
+      <input type="radio" name="genero" value="hombre" id="hombre">
+      <label for="hombre">Hombre</label>
+    </div>
+    <div class="rad-btn">
+      <input type="radio" name="genero" value="otro" id="otro">
+      <label for="otro">No decir</label>
+    </div>
+  </div>
+  <div class="fila">
+    <input class="form__campo" type="password" name="contrasena" placeholder="Contraseña">
+    <input class="form__campo" type="password" name="contrasena_c" placeholder="Confirme contraseña">
+  </div>
+  <input class="form__btn ancho-50" type="submit" value="Crear">
+  <a class="form__link" href="{% url 'indexIniciarSesion' %}">Ya tengo cuenta</a>
+</form>
+{% endblock %}

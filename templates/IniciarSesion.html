@@ -1,32 +1,14 @@
+{% extends 'layout/outter.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="{% static 'public/IniciarSesion.css' %}">
-    <link rel="stylesheet" href="{% static 'public/bs/bootstrap.min.css' %}">
-    <!-- <script defer type="module" src="{% static 'src/index.js' %}"></script> -->
-  </head>
-  <body>
-    <div class="logo">
-      <div class="logo__titulo">GAIA</div>
-      <div class="logo__img">
-        <img src="{% static 'images/logo.png' %}" alt="">
-      </div>
-    </div>
-    <div class="container">
-      <div class="ingresar">
-        <form class="form col-8">
-          <div class="form__titulo">Ingresar</div>
-          <input class="form__campo" type="email" name="correo" placeholder="Correo">
-          <input class="form__campo"type="password" name="contrasena" placeholder="Contraseña">
-          <input class="form__btn" type="submit">
-          <a class="form__enlace" href="#">Aun no tengo cuenta</a>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+
+{% block title %}Iniciar Sesion{% endblock %}
+
+{% block content %}
+<form id="form-crear">
+  <p class="form__titulo">Ingresar</p>
+  <input class="form__campo ancho" type="email" name="correo" placeholder="Correo">
+  <input class="form__campo ancho" type="password" name="contrasena" placeholder="Contraseña">
+  <input class="form__btn ancho" type="submit" value="Ingresar">
+  <a class="form__link" href="{% url 'indexCrearCuenta' %}">Aun no tengo cuenta</a>
+</form>
+{% endblock %}

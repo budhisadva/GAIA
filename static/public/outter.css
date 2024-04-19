@@ -1,0 +1,150 @@
+@import "colores.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  font-family: "Open Sans";
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  background-image: linear-gradient(73deg, var(--azul_claro), var(--azul_oscuro));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo {
+  width: 765px;
+  height: 560px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -57%);
+  z-index: 1;
+}
+
+.logo__titulo {
+  width: 100%;
+  height: 13%;
+  color: white;
+  font-size: 96px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo__img {
+  width: 100%;
+  height: 87%;
+  display: flex;
+  justify-content: center;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#form-crear {
+  width: 628px;
+  height: 458px;
+  background-color: rgba(102, 111, 136, .75);
+  color: white;
+  border-radius: 67px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#form-registrar {
+  width: 792px;
+  height: 458px;
+  background-color: rgba(102, 111, 136, .75);
+  color: white;
+  border-radius: 67px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form__titulo {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.fila {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__campo {
+  padding: 5px 0 5px 10px;
+  background-color: var(--gris_oscuro);
+  outline: none;
+  border: solid 1px white;
+  border-radius: 3px;
+  color: white;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+input[type="date"] {
+  width: 50%;
+}
+
+.rad-btn {
+  color: white;
+  font-size: 24px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.form__btn {
+  padding: 5px 0;
+  color: white;
+  font-weight: lighter;
+  font-size: 24px;
+  background-color: var(--rosa);
+  border: none;
+  border-radius: 3px;
+}
+
+.form__link {
+  color: var(--celeste);
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.ancho {
+  width: 64%;
+}
+
+.ancho-50 {
+  width: 50%;
+}
