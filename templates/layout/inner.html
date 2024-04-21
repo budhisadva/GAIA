@@ -3,10 +3,49 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock %} - GAIA</title>
+    <link rel="stylesheet" href="{% static 'public/index.css' %}">
+    <link rel="stylesheet" href="{% static 'public/bs/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer type="module" src="{% static 'src/index.js' %}"></script>
+    <script defer type="text/javascript" src="{% static 'src/bs/bootstrap.bundle.min.js' %}"></script>
   </head>
   <body>
-    <p>base</p>
-    {% block content %}{% endblock %}
+    <div id="app">
+      <header class="fixed-top">
+        <div class="container-fluid">
+          <div class="cabecera row">
+            <div class="col-9">
+              <div class="cabecera__columna">
+                <div class="cabecera__icono">
+                  <img src="{% static 'images/inicio.jpeg' %}" alt="">
+                </div>
+                <div class="buscar">
+                  <i class="bi bi-search"></i>
+                  <input class="cabecera__busqueda" type="search" name="" placeholder="Buscar...">
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="cabecera__columna">
+                <div class="cabecera__btn">
+                  <i class="bi bi-chat"></i>
+                </div>
+                <div class="cabecera__btn">
+                  <i class="bi bi-bell"></i>
+                </div>
+                <div class="perfil">
+                  <div class="perfil__foto"></div>
+                  <div class="perfil__nombre">text</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      {% block content %}{% endblock %}
+    </div>
   </body>
 </html>
