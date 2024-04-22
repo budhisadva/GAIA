@@ -133,6 +133,10 @@ input[type="radio"] {
   background-color: var(--rosa);
   border: none;
   border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .form__link {
