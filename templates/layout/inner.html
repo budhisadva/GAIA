@@ -19,9 +19,9 @@
           <div class="cabecera row">
             <div class="col-9">
               <div class="cabecera__columna">
-                <div class="cabecera__icono">
+                <a class="cabecera__icono" href="{% url 'indexVerActividad' %}">
                   <img src="{% static 'images/inicio.jpeg' %}" alt="">
-                </div>
+                </a>
                 <div class="buscar">
                   <i class="bi bi-search"></i>
                   <input class="cabecera__busqueda" type="search" name="" placeholder="Buscar...">
@@ -45,7 +45,23 @@
           </div>
         </div>
       </header>
-      {% block content %}{% endblock %}
+      <div class="cuerpo container-fluid">
+        <div class="row justify-content-between">
+          <aside class="col-3"></aside>
+          <main class="col-6">
+            {% block content %}{% endblock %}
+          </main>
+          <aside class="contactos col-3">
+            <div class="contactos__titulo">Contactos</div>
+            <div class="contactos__lista">
+              <div class="contacto">
+                <div class="contacto__foto"></div>
+                <a class="contacto__nombre" href="#">texto</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
     </div>
   </body>
 </html>

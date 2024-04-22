@@ -1,0 +1,40 @@
+.contactos {
+  height: 100vh;
+}
+
+.contactos__titulo{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.contactos__lista {
+  /**/
+}
+
+.contacto {
+  width: 60%;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contacto__foto {
+  width: 43px;
+  height: 43px;
+  border-radius: 50px;
+  background-color: gray;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contacto__nombre {
+  color: white;
+  margin-left: 8px;
+  font-weight: lighter;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
