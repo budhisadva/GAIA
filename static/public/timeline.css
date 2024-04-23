@@ -44,3 +44,72 @@
   display: flex;
   flex-direction: column;
 }
+
+.overlay__publicar {
+  width: 626px;
+  height: 198px;
+  background-color: #474B4E;
+  padding-top: 21px;
+  padding-left: 31px;
+  border-radius: 5px;
+  border: none;
+  position: absolute;
+  right: -64px;
+  color: white;
+}
+
+.overlay__publicar__fila {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.overlay__publicar__perfil {
+  width: 43px;
+  height: 43px;
+  border-radius: 50px;
+  background-color: black;
+  margin-right: 49px;
+}
+
+.overlay__publicar__texto {
+  min-height: 78px;
+  width: 422px;
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  background-color: #6F6F6F;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+.overlay__publicar__archivo {
+  width: 65px;
+  height: 31px;
+  text-decoration: underline;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50px;
+  cursor: pointer;
+  & i {
+    height: 100%;
+  }
+}
+
+.overlay__publicar__btn {
+  width: 142px;
+  height: 31px;
+  border: none;
+  outline: none;
+  background-color: #7209B7;
+  color: white;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: 84px;
+}
+
+.modal-content {
+  border: none !important;
+}
