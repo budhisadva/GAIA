@@ -4,11 +4,11 @@
 {% block title %}Iniciar Sesion{% endblock %}
 
 {% block content %}
-<form id="form-crear">
+<form id="form-ingresar">
   <p class="form__titulo">Ingresar</p>
-  <input class="form__campo ancho" type="email" name="correo" placeholder="Correo">
-  <input class="form__campo ancho" type="password" name="contrasena" placeholder="Contraseña">
-  <a class="form__btn ancho" href="{% url 'indexVerActividad' %}">Ingresar</a>
+  <input class="form__campo ancho-64" type="email" name="correo" placeholder="Correo">
+  <input class="form__campo ancho-64" type="password" name="contrasena" placeholder="Contraseña">
+  <input class="form__btn ancho-64" type="submit" value="Ingresar">
   <a class="form__link" href="{% url 'indexCrearCuenta' %}">Aun no tengo cuenta</a>
 </form>
 {% endblock %}

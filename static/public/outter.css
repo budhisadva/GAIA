@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans";
 }
@@ -9,7 +15,7 @@ body {
 #app {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: relative;
   overflow: scroll;
   background-image: linear-gradient(73deg, var(--azul_claro), var(--azul_oscuro));
   background-position: center;
@@ -49,7 +55,7 @@ body {
   }
 }
 
-#form-crear {
+#form-ingresar {
   width: 628px;
   height: 458px;
   background-color: rgba(102, 111, 136, .75);
@@ -90,15 +96,16 @@ body {
 }
 
 .fila {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
 
 .form__campo {
+  width: 316px;
   padding: 5px 0 5px 10px;
   background-color: var(--gris_oscuro);
   outline: none;
@@ -109,20 +116,15 @@ body {
   font-weight: lighter;
 }
 
-input[type="date"] {
-  width: 50%;
-}
-
 .rad-btn {
   color: white;
   font-size: 24px;
   font-weight: lighter;
   display: flex;
   flex-direction: row;
-}
-
-input[type="radio"] {
-  margin-right: 5px;
+  & label {
+    margin-left: 5px;
+  }
 }
 
 .form__btn {
@@ -136,7 +138,6 @@ input[type="radio"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
 }
 
 .form__link {
@@ -145,7 +146,7 @@ input[type="radio"] {
   font-weight: lighter;
 }
 
-.ancho {
+.ancho-64 {
   width: 64%;
 }
 
