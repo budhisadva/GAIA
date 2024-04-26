@@ -9,12 +9,15 @@
 
 * {
   font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: relative;
   overflow: hidden;
   background: #3E4144;
 }
