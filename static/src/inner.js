@@ -1,11 +1,14 @@
-const opcionesListener = () => {
-  let perfil = [...document.getElementsByClassName('perfil__nombre')][0];
-  perfil.addEventListener('click', (e) => {
-    let opciones = [...document.getElementsByClassName('opciones')][0];
-    opciones.toggleAttribute('hidden');
-  });
+import { opcionesListener } from './Eventos/opciones.js';
+import { listarPosts } from './VerActividad/funciones.js';
+
+const renderApp = () => {
+  opcionesListener();
 }
 
 window.onload = () => {
-  opcionesListener();
+  renderApp();
+  let feed = document.getElementById('posts');
+  if (feed) {
+    listarPosts(feed);
+  }
 }
