@@ -47,7 +47,7 @@
 
 .overlay__publicar {
   width: 626px;
-  height: 198px;
+  min-height: 198px;
   background-color: #474B4E;
   padding-top: 21px;
   padding-left: 31px;
