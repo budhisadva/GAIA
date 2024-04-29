@@ -6,5 +6,6 @@ def index(request):
     return render(request, 'CrearCuenta.html')
 
 def crearCuenta(request):
-    print(request.POST.dict())
+    formulario = request.POST.dict()
+    print(formulario)
     return HttpResponseRedirect('/verActividad')

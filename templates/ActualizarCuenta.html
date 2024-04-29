@@ -6,33 +6,34 @@
 <div class="actualizar">
   <div class="actualizar__titulo">Actualizar cuenta</div>
   <div class="formularios">
-    <form class="formulario">
+    <form class="formulario" action="#" method="POST">
+      {% csrf_token %}
       <div class="formulario__titulo">Nombre</div>
       <input class="formulario__campo" type="text" placeholder="Ingresa el nuevo nombre">
       <input class="formulario__campo" type="text" placeholder="Confirma el nuevo nombre">
       <div class="botones">
         <button class="formulario__btn btn-c" type="button">Cancelar</button>
-        <button class="formulario__btn btn-a" type="button">Aceptar</button>
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
       </div>
     </form>
-    <!--  -->
-    <form class="formulario">
+    <form class="formulario" action="#" method="POST">
+      {% csrf_token %}
       <div class="formulario__titulo">Contraseña</div>
       <input class="formulario__campo" type="password" placeholder="Ingresa la nueva contraseña">
       <input class="formulario__campo" type="password" placeholder="Confirma la nueva contraseña">
       <div class="botones">
         <button class="formulario__btn btn-c" type="button">Cancelar</button>
-        <button class="formulario__btn btn-a" type="button">Aceptar</button>
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
       </div>
     </form>
-    <!--  -->
-    <form class="formulario">
+    <form class="formulario" action="#" method="POST">
+      {% csrf_token %}
       <div class="formulario__titulo">Correo</div>
       <input class="formulario__campo" type="email" placeholder="Ingresa el nuevo correo">
       <input class="formulario__campo" type="email" placeholder="Confirma el nuevo correo">
       <div class="botones">
         <button class="formulario__btn btn-c" type="button">Cancelar</button>
-        <button class="formulario__btn btn-a" type="button">Aceptar</button>
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
       </div>
     </form>
   </div>

@@ -4,7 +4,8 @@
 {% block title %}Iniciar Sesion{% endblock %}
 
 {% block content %}
-<form id="form-ingresar">
+<form id="form-ingresar" action="#" method="GET">
+  {% csrf_token %}
   <p class="form__titulo">Ingresar</p>
   <input class="form__campo ancho-64" type="email" name="correo" placeholder="Correo">
   <input class="form__campo ancho-64" type="password" name="contrasena" placeholder="Contraseña">

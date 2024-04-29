@@ -75,7 +75,8 @@
     <div class="modal fade" id="modal-publicar" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form class="overlay__publicar">
+          <form class="overlay__publicar" action="#" method="POST">
+            {% csrf_token %}
             <div class="overlay__publicar__fila">
               <div class="overlay__publicar__perfil"></div>
               <textarea class="overlay__publicar__texto" placeholder="¿Qué estás pensando?"></textarea>
@@ -91,7 +92,7 @@
               </div>
             </div>
             <div class="overlay__publicar__fila">
-              <button class="overlay__publicar__btn" type="button">Publicar</button>
+              <button class="overlay__publicar__btn" type="submit">Publicar</button>
             </div>
           </form>
         </div>
