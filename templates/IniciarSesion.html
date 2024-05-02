@@ -4,7 +4,7 @@
 {% block title %}Iniciar Sesion{% endblock %}
 
 {% block content %}
-<form id="form-ingresar" action="#" method="GET">
+  <form id="form-ingresar" action="{% url 'IniciarSesion:index'%}" method="POST">
   {% csrf_token %}
   <p class="form__titulo">Ingresar</p>
   <input class="form__campo ancho-64" type="email" name="correo" placeholder="Correo">
