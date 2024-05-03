@@ -75,11 +75,11 @@
     <div class="modal fade" id="modal-publicar" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form class="overlay__publicar" action="#" method="POST" enctype="multipart/form-data">
+          <form class="overlay__publicar" action="{% url 'publicar' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="overlay__publicar__fila">
               <div class="overlay__publicar__perfil"></div>
-              <textarea class="overlay__publicar__texto" placeholder="¿Qué estás pensando?"></textarea>
+              <textarea class="overlay__publicar__texto" name="texto" placeholder="¿Qué estás pensando?"></textarea>
             </div>
             <div class="overlay__publicar__fila">
               <input type="file" id="publicar-btn-foto" hidden>

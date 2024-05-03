@@ -26,4 +26,5 @@ urlpatterns = [
     path('verActividad/', include('VerActividad.urls')),
     path('publicar/', include('Publicar.urls')),
     path('enviarSolicitud/', include('EnviarSolicitud.urls')),
+    
 ]
