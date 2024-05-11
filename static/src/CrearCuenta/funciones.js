@@ -1,16 +1,21 @@
-const validarNombre = (nombre) => {
-  return nombre.value !== "";
+import { validarNombre, validarContrasena, validarCorreo } from '../Validaciones/funciones.js';
+
+/**
+ * Verifica que se haya ingresado una fecha posterior a la actual.
+ * @param fecha : <input>
+ */
+const validarFecha = (fecha) => {
+  let fechaFinal = fecha.value.substring(0, 8);
+  fechaFinal += parseInt(fecha.value.substring(8))+1;
+  let ingresado = new Date(fechaFinal);
+  let actual = new Date(Date.now());
+  return actual > ingresado;
 }
 
-const validarCorreo = (correo, confirmaCorreo) => {
-  if (correo.value === "" || confirmaCorreo.value === "") {
-    return false;
-  } else if (correo.value !== confirmaCorreo.value) {
-    return false;
-  }
-  return true;
-}
-
+/**
+ * Verifica que se haya ingresado un valor para el campo genero.
+ * @param listaValores : [<input>]
+ */
 const validarGenero = (listaValores) => {
   let genero = [];
   listaValores.forEach(x => {
@@ -20,20 +25,24 @@ const validarGenero = (listaValores) => {
   return true;
 }
 
-const validarContrasena = (contrasena, confirmaContrasena) => {
-  if (contrasena.value === "" || confirmaContrasena.value === "") {
-    return false;
-  } else if (contrasena.value !== confirmaContrasena.value) {
-    return false;
-  }
-  return true;
-}
-
+/**
+ * Ejecuta las validaciones cuando el formulario intenta ser
+ * enviado.
+ * @param formulario : <form>
+ */
 const crearCuenta = (formulario) => {
   formulario.onsubmit = (e) => {
     e.preventDefault();
-    if (!validarNombre(formulario.nombre)) {
-      alert('Ingrese un nombre');
+    switch (validarNombre(formulario.nombre)) {
+      case 101:
+        alert('Nombre muy corto');
+        return;
+      case 102:
+        alert('Nombre muy largo');
+        return;
+    }
+    if (!validarFecha(formulario.fecha)) {
+      alert('Ingrese una fecha correcta');
       return;
     }
     if (!validarCorreo(formulario.correo, formulario.correo_c)) {

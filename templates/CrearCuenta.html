@@ -4,16 +4,16 @@
 {% block title %}Crear Cuenta{% endblock %}
 
 {% block content %}
-<form id="form-registrar" action="{% url 'CrearCuenta:new'%}" method="POST">
+<form id="form-registrar" action="{% url 'CrearCuenta:crear'%}" method="POST">
   {% csrf_token %}
   <p class="form__titulo">Registrarse</p>
   <div class="fila">
-    <input class="form__campo" type="text" name="nombre" placeholder="Nombre">
-    <input class="form__campo" type="date" name="fecha">
+    <input class="form__campo" type="text" name="nombre" placeholder="Nombre" required>
+    <input class="form__campo" type="date" name="fecha" required>
   </div>
   <div class="fila">
-    <input class="form__campo" type="email" name="correo" placeholder="Correo">
-    <input class="form__campo" type="email" name="correo_c" placeholder="Confirme correo">
+    <input class="form__campo" type="email" name="correo" placeholder="Correo" required>
+    <input class="form__campo" type="email" name="correo_c" placeholder="Confirme correo" required>
   </div>
   <div class="fila">
     <div class="rad-btn">
@@ -30,8 +30,8 @@
     </div>
   </div>
   <div class="fila">
-    <input class="form__campo" type="password" name="contrasena" placeholder="Contraseña">
-    <input class="form__campo" type="password" name="contrasena_c" placeholder="Confirme contraseña">
+    <input class="form__campo" type="password" name="contrasena" placeholder="Contraseña" required>
+    <input class="form__campo" type="password" name="contrasena_c" placeholder="Confirme contraseña" required>
   </div>
   <input class="form__btn ancho-50" type="submit" value="Crear">
   <a class="form__link" href="{% url 'IniciarSesion:index' %}">Ya tengo cuenta</a>
