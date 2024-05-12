@@ -1,4 +1,21 @@
 /**
+ * Verifica que el nombre sea entre 4 y 15 caracteres y
+ * que ambas entradas sean iguales
+ * @param nombre : <input>
+ * @param confirmaNombre : <input>
+ */
+const validarNombres = (nombre, confirmaNombre) => {
+  let formato, confirmacion = false;
+  if (validarNombre(nombre) == 100) {
+    formato = true;
+  }
+  if (nombre.value === confirmaNombre.value) {
+    confirmacion = true;
+  }
+  return formato && confirmacion;
+}
+
+/**
  * Verifica que el nombre sea entre 4 y 15 caracteres.
  * @param nombre : <input>
  */
@@ -36,4 +53,4 @@ const validarCorreo = (correo, confirmaCorreo) => {
   return true;
 }
 
-export { validarNombre, validarContrasena, validarCorreo };
+export { validarNombre, validarContrasena, validarCorreo, validarNombres };
