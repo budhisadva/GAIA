@@ -33,16 +33,8 @@
   border: none;
   outline: none;
   background-color: #6F6F6F;
-  color: white;
   font-size: 20px;
   font-weight: normal;
-}
-
-.posts {
-  width: 100%;
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
 }
 
 .overlay__publicar {
@@ -112,4 +104,40 @@
 
 .modal-content {
   border: none !important;
+}
+
+.posts {
+  width: 100%;
+  margin-top: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vacio {
+  width: 626px;
+  height: 316px;
+  background-color: #474B4E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vacio__titulo {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 24px;
+}
+
+.vacio__icono {
+  width: 230px;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & i {
+    color: #3E4144;
+    font-size: 220px;
+  }
 }
