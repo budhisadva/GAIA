@@ -75,6 +75,7 @@
   outline: none;
   border-radius: 5px;
   padding-left: 20px;
+  padding-top: 5px;
 }
 
 .overlay__publicar__archivo {
