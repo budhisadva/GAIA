@@ -4,6 +4,7 @@
 {% block title %}Crear Cuenta{% endblock %}
 
 {% block content %}
+{{ error }}
 <form id="form-registrar" action="{% url 'CrearCuenta:crear'%}" method="POST">
   {% csrf_token %}
   <p class="form__titulo">Registrarse</p>
