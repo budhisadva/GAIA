@@ -4,10 +4,11 @@
 {% block title %}Iniciar Sesion{% endblock %}
 
 {% block content %}
-<form id="form-ingresar" action="{% url 'IniciarSesion:ingresar' %}" method="POST">
+{{ error }}
+<form id="form-ingresar" action="{% url 'IniciarSesion:iniciar_sesion' %}" method="POST">
   {% csrf_token %}
   <p class="form__titulo">Ingresar</p>
-  <input class="form__campo ancho-64" type="email" name="correo" placeholder="Correo" required>
+  <input class="form__campo ancho-64" type="text" name="nombre" placeholder="Nombre" required>
   <input class="form__campo ancho-64" type="password" name="contrasena" placeholder="Contraseña" required>
   <input class="form__btn ancho-64" type="submit" value="Ingresar">
   <a class="form__link" href="{% url 'CrearCuenta:index' %}">Aun no tengo cuenta</a>
