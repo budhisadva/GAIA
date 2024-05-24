@@ -23,5 +23,3 @@ const listarPosts = async (contenedor) => {
     `;
   }
 }
-
-export { listarPosts };

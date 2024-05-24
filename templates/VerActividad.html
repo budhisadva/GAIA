@@ -10,6 +10,17 @@
       <input class="publicar__entrada text-white" type="text" placeholder="¿Qué estás pensando?">
     </a>
   </div>
-  <div class="posts" id="posts"></div>
+  <div class="posts" id="posts">
+    {% if posts %}
+      <p>Hay post</p>
+    {% else %}
+      <div class="vacio">
+        <p class="vacio__titulo">No tienes publicaciones nuevas</p>
+        <div class="vacio__icono">
+          <i class="bi bi-clock-history"></i>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

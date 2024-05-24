@@ -5,5 +5,4 @@ app_name = 'VerActividad'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('publicaciones/', views.publicaciones, name='publicaciones'),
 ]
