@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Post
@@ -15,7 +15,10 @@ def crear(request):
             if request.POST['enlace']:
                 post.enlace = request.POST['enlace']
                 post.save()
-            if request.FILES['foto']:
-                post.imagen = request.FILES['foto']
-                post.save()
-    return render(request, 'VerActividad.html')
+            try:
+                if request.FILES['foto']:
+                    post.imagen = request.FILES['foto']
+                    post.save()
+            except Exception as e:
+                print('Error: ', e)
+    return redirect('VerActividad:index')

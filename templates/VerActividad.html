@@ -12,7 +12,23 @@
   </div>
   <div class="posts" id="posts">
     {% if posts %}
-      <p>Hay post</p>
+      {% for post in posts %}
+        <div class="" style="margin: 10px 0;">
+          <div class="">{{ post.usuario }}</div>
+          <div class="">{{ post.fecha_creacion }}</div>
+          <p>{{ post.texto }}</p>
+          {% if post.enlace != 'null'%}
+          <div class="">
+            <a href="{{post.enlace}}" target="_blank">{{post.enlace}}</a>
+          </div>
+          {% endif %}
+          {% if post.imagen != 'null' %}
+          <div class="">
+            <img src="{{post.imagen.url}}" alt="" height="100px" width="100px">
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
     {% else %}
       <div class="vacio">
         <p class="vacio__titulo">No tienes publicaciones nuevas</p>
