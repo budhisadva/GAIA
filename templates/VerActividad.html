@@ -13,18 +13,18 @@
   <div class="posts" id="posts">
     {% if posts %}
       {% for post in posts %}
-        <div class="" style="margin: 10px 0;">
-          <div class="">{{ post.usuario }}</div>
-          <div class="">{{ post.fecha_creacion }}</div>
-          <p>{{ post.texto }}</p>
+        <div class="post">
+          <div class="post__usuario">{{ post.usuario }}</div>
+          <div class="post__fecha">{{ post.fecha_creacion }}</div>
+          <p class="post__texto">{{ post.texto }}</p>
           {% if post.enlace != 'null'%}
-          <div class="">
+          <div class="post__enlace">
             <a href="{{post.enlace}}" target="_blank">{{post.enlace}}</a>
           </div>
           {% endif %}
           {% if post.imagen != 'null' %}
-          <div class="">
-            <img src="{{post.imagen.url}}" alt="" height="100px" width="100px">
+          <div class="post__imagen">
+            <img src="{{post.imagen.url}}" alt="">
           </div>
           {% endif %}
         </div>
