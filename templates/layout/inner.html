@@ -80,20 +80,16 @@
             {% csrf_token %}
             <div class="overlay__publicar__fila">
               <div class="overlay__publicar__perfil"></div>
-              <textarea class="overlay__publicar__texto" placeholder="¿Qué estás pensando?"></textarea>
+              <textarea class="overlay__publicar__texto" name="texto" placeholder="¿Qué estás pensando?" required></textarea>
             </div>
             <div class="overlay__publicar__fila">
-              <input type="file" id="publicar-btn-foto" hidden>
               <label class="overlay__publicar__archivo" for="publicar-btn-foto">
                 <i class="bi bi-card-image"></i>
                 Foto
               </label>
-              <input type="file" id="publicar-btn-video" hidden>
-              <label class="overlay__publicar__archivo" for="publicar-btn-video">
-                <i class="bi bi-link-45deg"></i>
-                Video
-              </label>
+              <input type="file" id="publicar-btn-foto" name="foto">
             </div>
+            <input type="text" name="enlace" placeholder="Escriba aqui el enlace...">
             <div class="overlay__publicar__pendientes"></div>
             <div class="overlay__publicar__fila">
               <button class="overlay__publicar__btn" type="submit">Publicar</button>
