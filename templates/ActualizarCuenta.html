@@ -35,8 +35,8 @@
     <form class="formulario" action="{% url 'ActualizarCuenta:correo' %}" method="POST">
       {% csrf_token %}
       <div class="formulario__titulo">Correo</div>
-      <input class="formulario__campo" type="email" name="correo" placeholder="Ingresa el nuevo correo">
-      <input class="formulario__campo" type="email" placeholder="Confirma el nuevo correo">
+      <input class="formulario__campo" type="email" name="correo" placeholder="Ingresa el nuevo correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      <input class="formulario__campo" type="email" placeholder="Confirma el nuevo correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
       <div class="botones">
         <button class="formulario__btn btn-c" type="button">Cancelar</button>
         <button class="formulario__btn btn-a" type="submit">Aceptar</button>

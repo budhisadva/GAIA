@@ -5,7 +5,7 @@ from Publicar.models import Post
 
 @login_required
 def index(request):
-    posts = Post.objects.filter(usuario=request.user)
+    posts = Post.objects.filter(usuario=request.user).order_by('-fecha_creacion')
     return render(request, 'VerActividad.html', {
         'posts': posts
     })
