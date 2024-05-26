@@ -4,7 +4,12 @@
 {% block title %}Crear Cuenta{% endblock %}
 
 {% block content %}
-{{ error }}
+{% for m in messages %}
+<div class="alert alert-primary alert-dismissible fade show">
+  <strong>Error: </strong>{{m}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="cerrar"></button>
+</div>
+{% endfor %}
 <form id="form-registrar" action="{% url 'CrearCuenta:crear'%}" method="POST">
   {% csrf_token %}
   <p class="form__titulo">Registrarse</p>
@@ -13,8 +18,8 @@
     <input class="form__campo" type="date" name="fecha" required>
   </div>
   <div class="fila">
-    <input class="form__campo" type="email" name="correo" placeholder="Correo" required>
-    <input class="form__campo" type="email" name="correo_c" placeholder="Confirme correo" required>
+    <input class="form__campo" type="email" name="correo" placeholder="Correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <input class="form__campo" type="email" name="correo_c" placeholder="Confirme correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
   </div>
   <div class="fila">
     <div class="rad-btn">
