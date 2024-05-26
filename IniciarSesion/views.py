@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -12,9 +13,8 @@ def iniciar_sesion(request):
                             username=formulario['nombre'],
                             password=formulario['contrasena'])
         if user is None:
-            return render(request, 'IniciarSesion.html', {
-                'error': 'Nombre o contraseña incorrecta'
-            })
+            messages.error(request, "Nombre y/o contraseña incorrectas.")
+            return redirect('IniciarSesion:index')
         else:
             login(request, user)
             return redirect('VerActividad:index')
