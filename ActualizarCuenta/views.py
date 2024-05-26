@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.db import IntegrityError
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.decorators import login_required
@@ -11,12 +13,19 @@ def index(request):
 @login_required
 def nombre(request):
     if request.method == 'POST':
-        user = User.objects.get(id=request.user.id)
-        user.username = request.POST['nombre']
-        user.save()
-        return render(request, 'ActualizarCuenta.html', {
-            'mensaje': 'Nombre actualizado correctamente'
-        })
+        try:
+            user = User.objects.get(id=request.user.id)
+            user.username = request.POST['nombre']
+            user.save()
+        except IntegrityError:
+            messages.error(request, f"El nombre: {request.POST['nombre']}, no está disponible")
+            return redirect('ActualizarCuenta:index')
+        except Exception as e:
+            print(e)
+            messages.error(request, f"{e}")
+            return redirect('ActualizarCuenta:index')
+        messages.success(request, 'Nombre actualizado correctamente.')
+        return redirect('ActualizarCuenta:index')
 
 @login_required
 def contrasena(request):
@@ -25,9 +34,8 @@ def contrasena(request):
         user.password = make_password(request.POST['contrasena'])
         user.save()
         update_session_auth_hash(request, user)
-        return render(request, 'ActualizarCuenta.html', {
-            'mensaje': 'Contraseña actualizada correctamente'
-        })
+        messages.success(request, 'Contraseña actualizada correctamente.')
+        return redirect('ActualizarCuenta:index')
 
 @login_required
 def correo(request):
@@ -35,6 +43,5 @@ def correo(request):
         user = User.objects.get(id=request.user.id)
         user.email = request.POST['correo']
         user.save()
-        return render(request, 'ActualizarCuenta.html', {
-            'mensaje': 'Correo actualizado correctamente'
-        })
+        messages.success(request, 'Correo actualizado correctamente.')
+        return redirect('ActualizarCuenta:index')
