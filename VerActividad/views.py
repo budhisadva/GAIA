@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.decorators import login_required
+from Publicar.models import Post
 
-# Create your views here.
+@login_required
 def index(request):
-    return render(request, 'VerActividad.html')
+    posts = Post.objects.filter(usuario=request.user).order_by('-fecha_creacion')
+    return render(request, 'VerActividad.html', {
+        'posts': posts
+    })

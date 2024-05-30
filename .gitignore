@@ -1,2 +1,3 @@
 /.matrix
 */__pycache__/
+*.pyc

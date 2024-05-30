@@ -7,9 +7,36 @@
   <div class="publicar" id="publicar">
     <div class="publicar__foto"></div>
     <a href="#" data-bs-toggle="modal" data-bs-target="#modal-publicar">
-      <input class="publicar__entrada" type="text" placeholder="¿Qué estás pensando?">
+      <input class="publicar__entrada text-white" type="text" placeholder="¿Qué estás pensando?">
     </a>
   </div>
-  <div class="posts" id="posts"></div>
+  <div class="posts" id="posts">
+    {% if posts %}
+      {% for post in posts %}
+        <div class="post">
+          <div class="post__usuario">{{ post.usuario }}</div>
+          <div class="post__fecha">{{ post.fecha_creacion }}</div>
+          <p class="post__texto">{{ post.texto }}</p>
+          {% if post.enlace != 'null'%}
+          <div class="post__enlace">
+            <a href="{{post.enlace}}" target="_blank">{{post.enlace}}</a>
+          </div>
+          {% endif %}
+          {% if post.imagen != 'null' %}
+          <div class="post__imagen">
+            <img src="{{post.imagen.url}}" alt="">
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="vacio">
+        <p class="vacio__titulo">No tienes publicaciones nuevas</p>
+        <div class="vacio__icono">
+          <i class="bi bi-clock-history"></i>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

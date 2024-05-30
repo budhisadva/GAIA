@@ -103,7 +103,7 @@
 
 .opciones {
   width: 223px;
-  height: 65px;
+  height: 81px;
   background-color: #6F6F6F;
   position: absolute;
   top: 57px;
@@ -115,7 +115,7 @@
 
 .opciones__btn {
   width: 204px;
-  height: 21px;
+  height: 28px;
   font-size: 15px;
   margin-top: 8px;
   margin-left: 9px;
