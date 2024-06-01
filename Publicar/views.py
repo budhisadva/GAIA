@@ -15,10 +15,7 @@ def crear(request):
             if request.POST['enlace']:
                 post.enlace = request.POST['enlace']
                 post.save()
-            try:
-                if request.FILES['foto']:
-                    post.imagen = request.FILES['foto']
-                    post.save()
-            except Exception as e:
-                print('Error: ', e)
+            if request.FILES.get('foto'):
+                post.imagen = request.FILES['foto']
+                post.save()
     return redirect('VerActividad:index')
