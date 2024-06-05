@@ -1,0 +1,15 @@
+.admon__usr {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.admon__btn {
+  color: white;
+  width: 120px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 5px;
+}

@@ -1,0 +1,29 @@
+{% extends 'layout/inner.html' %}
+
+{% block title %}Administracion{% endblock %}
+
+{% block content %}
+<h2>Base de usuarios</h2>
+<hr>
+{% if usuarios %}
+  {% for usuario in usuarios %}
+    <div class="admon__usr">
+      <span>{{usuario.username}}</span>
+      <div>
+        {% if usuario.is_active %}
+        <a href="{% url 'Administracion:bloquear' usr_id=usuario.id %}">
+          <button type="button" class="admon__btn rosa">Bloquear</button>
+        </a>
+        {% else %}
+        <a href="{% url 'Administracion:desbloquear' usr_id=usuario.id %}">
+          <button type="button" class="admon__btn rosa">Desbloquear</button>
+        </a>
+        {% endif %}
+        <a href="{% url 'Administracion:eliminar' usr_id=usuario.id %}">
+          <button type="button" class="admon__btn morado">Eliminar</button>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

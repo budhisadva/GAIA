@@ -45,3 +45,15 @@ def correo(request):
         user.save()
         messages.success(request, 'Correo actualizado correctamente.')
         return redirect('ActualizarCuenta:index')
+
+@login_required
+def super(request):
+    if request.method == 'POST':
+        user = User.objects.get(id=request.user.id)
+        if request.POST.get('superUsuario') is None:
+            user.is_superuser = False
+        else:
+            user.is_superuser = True
+        user.save()
+        messages.success(request, 'Estado de cuenta actualizado correctamente.')
+        return redirect('ActualizarCuenta:index')

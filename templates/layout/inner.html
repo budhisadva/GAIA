@@ -32,9 +32,13 @@
             </div>
             <div class="col-3">
               <div class="cabecera__columna">
+                {% if request.user.is_superuser%}
                 <div class="cabecera__btn">
-                  <i class="bi bi-chat"></i>
+                  <a href="{% url 'Administracion:base' %}">
+                    <i class="bi bi-people"></i>
+                  </a>
                 </div>
+                {% endif %}
                 <div class="cabecera__btn">
                   <a href="{% url 'SolicitudAmistad:notificaciones' %}"><i class="bi bi-bell"></i></a>
                 </div>
