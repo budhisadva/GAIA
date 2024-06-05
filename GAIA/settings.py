@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'ActualizarCuenta.apps.ActualizarcuentaConfig',
     'VerActividad.apps.VeractividadConfig',
     'Publicar.apps.PublicarConfig',
-    'EnviarSolicitud.apps.EnviarsolicitudConfig',
+    'SolicitudAmistad.apps.SolicitudamistadConfig',
 ]
 
 MIDDLEWARE = [

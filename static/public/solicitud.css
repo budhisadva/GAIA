@@ -1,0 +1,17 @@
+.solicitud {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.solicitud__btn {
+  color: white;
+  width: 150px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 5px;
+  background-color: #B5179E;
+}

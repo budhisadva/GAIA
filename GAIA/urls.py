@@ -26,7 +26,7 @@ urlpatterns = [
     path('actualizarCuenta/', include('ActualizarCuenta.urls')),
     path('verActividad/', include('VerActividad.urls')),
     path('publicar/', include('Publicar.urls')),
-    path('enviarSolicitud/', include('EnviarSolicitud.urls')),
+    path('solicitud/', include('SolicitudAmistad.urls')),
 ]
 
 # configuracion para cargar imagenes
