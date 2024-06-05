@@ -1,0 +1,23 @@
+{% extends 'layout/inner.html' %}
+
+{% block title %}Administracion{% endblock %}
+
+{% block content %}
+<h2>Base de usuarios</h2>
+<hr>
+{% if usuarios %}
+  {% for usuario in usuarios %}
+    <div class="">
+      <span>{{usuario.username}}</span>
+      <div class="">
+        <a href="#">
+          <button type="button">Bloquear</button>
+        </a>
+        <a href="#">
+          <button type="button">Eliminar</button>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

@@ -42,6 +42,17 @@
         <button class="formulario__btn btn-a" type="submit">Aceptar</button>
       </div>
     </form>
+    <form class="formulario" action="{% url 'ActualizarCuenta:super' %}" method="POST">
+      {% csrf_token %}
+      <div class="formulario__titulo">Super Usuario</div>
+      <div class="form-check form-switch">
+        <input type="checkbox" name="superUsuario" value="True" class="form-check-input" id="switch">
+        <label for="switch" class="form-check-label">Presione</label>
+      </div>
+      <div class="botones">
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
+      </div>
+    </form>
   </div>
 </div>
 {% endblock %}

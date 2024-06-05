@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'VerActividad.apps.VeractividadConfig',
     'Publicar.apps.PublicarConfig',
     'SolicitudAmistad.apps.SolicitudamistadConfig',
+    'Administracion.apps.AdministracionConfig',
 ]
 
 MIDDLEWARE = [
