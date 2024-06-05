@@ -7,14 +7,20 @@
 <hr>
 {% if usuarios %}
   {% for usuario in usuarios %}
-    <div class="">
+    <div class="admon__usr">
       <span>{{usuario.username}}</span>
-      <div class="">
-        <a href="#">
-          <button type="button">Bloquear</button>
+      <div>
+        {% if usuario.is_active %}
+        <a href="{% url 'Administracion:bloquear' usr_id=usuario.id %}">
+          <button type="button" class="admon__btn rosa">Bloquear</button>
         </a>
-        <a href="#">
-          <button type="button">Eliminar</button>
+        {% else %}
+        <a href="{% url 'Administracion:desbloquear' usr_id=usuario.id %}">
+          <button type="button" class="admon__btn rosa">Desbloquear</button>
+        </a>
+        {% endif %}
+        <a href="{% url 'Administracion:eliminar' usr_id=usuario.id %}">
+          <button type="button" class="admon__btn morado">Eliminar</button>
         </a>
       </div>
     </div>
