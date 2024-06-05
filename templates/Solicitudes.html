@@ -1,0 +1,18 @@
+{% extends 'layout/inner.html' %}
+
+{% block title %}Solicitudes{% endblock %}
+
+{% block content %}
+<h2>Solicitudes recibidas</h2>
+<hr>
+{% if solicitudes %}
+  {% for solicitud in solicitudes %}
+    <div class="solicitud">
+      <span class="solicitud__nombre">{{solicitud.emisor}}</span>
+      <a href="{% url 'SolicitudAmistad:aceptar' solicitud_id=solicitud.id %}">
+        <button type="button" class="solicitud__btn">Aceptar</button>
+      </a>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

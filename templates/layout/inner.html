@@ -26,6 +26,7 @@
                 <div class="buscar">
                   <i class="bi bi-search"></i>
                   <input class="cabecera__busqueda" type="search" name="" placeholder="Buscar...">
+                  <div class="buscar__menu" hidden="true"></div>
                 </div>
               </div>
             </div>
@@ -35,7 +36,7 @@
                   <i class="bi bi-chat"></i>
                 </div>
                 <div class="cabecera__btn">
-                  <i class="bi bi-bell"></i>
+                  <a href="{% url 'SolicitudAmistad:notificaciones' %}"><i class="bi bi-bell"></i></a>
                 </div>
                 <div class="perfil">
                   <div class="perfil__foto"></div>
@@ -61,13 +62,21 @@
             {% block content %}{% endblock %}
           </main>
           <aside class="contactos col-3">
+            {% if amigos %}
             <div class="contactos__titulo">Contactos</div>
             <div class="contactos__lista">
-              <!-- <div class="contacto">
+              {% for amigo in amigos %}
+              <div class="contacto">
                 <div class="contacto__foto"></div>
-                <a class="contacto__nombre" href="#">texto</a>
-              </div> -->
+                {% if amigo.emisor != request.user %}
+                  <a class="contacto__nombre" href="#">{{amigo.emisor}}</a>
+                {% else %}
+                  <a class="contacto__nombre" href="#">{{amigo.receptor}}</a>
+                {% endif %}
+              </div>
+              {% endfor %}
             </div>
+            {% endif %}
           </aside>
         </div>
       </div>

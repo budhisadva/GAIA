@@ -17,7 +17,7 @@ def crear(request):
                                             email=formulario['correo'],
                                             password=formulario['contrasena'])
             user.save()
-            usuario = models.Usuario(usuario=user,
+            usuario = models.Usuario(user=user,
                                      genero=formulario['genero'],
                                      fechaN=formulario['fecha'])
             usuario.save()
